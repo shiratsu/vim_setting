@@ -64,29 +64,30 @@ endif
 
 " Required:
 set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-" Required:
+"
+"" Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-" NeoBundle 'scrooloose/nerdtree'
-" NeoBundle 'b4b4r07/vim-shellutils'
-" ファイルオープンを便利に
-NeoBundle 'Shougo/unite.vim'
-" Unite.vimで最近使ったファイルを表示できるようにする
-NeoBundle 'Shougo/neomru.vim'
-" NeoBundle 'tpope/vim-fugitive'
+"
+"" Let NeoBundle manage NeoBundle
+"" Required:
+ NeoBundleFetch 'Shougo/neobundle.vim'
+"" NeoBundle 'scrooloose/nerdtree'
+"" NeoBundle 'b4b4r07/vim-shellutils'
+"" ファイルオープンを便利に
+"" NeoBundle 'Shougo/unite.vim'
+"" Unite.vimで最近使ったファイルを表示できるようにする
+"" NeoBundle 'Shougo/neomru.vim'
+"" NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'kana/vim-submode'
-
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-
+"" NeoBundle 'kana/vim-submode'
+NeoBundle 'yonchu/accelerated-smooth-scroll'
+"
+"" My Bundles here:
+"" Refer to |:NeoBundle-examples|.
+"" Note: You don't set neobundle setting in .gvimrc!
+"
 call neobundle#end()
-
+"
 " Required:
 filetype plugin indent on
 
@@ -98,7 +99,7 @@ syntax on
 
 set splitright
 set splitbelow
-set mouse=a
+" set mouse=a
 set clipboard=unnamed,autoselect
 
 "-----------------------------------------------------------------------------
@@ -125,6 +126,8 @@ let b:netrw_col = 1
 " " 現在の行番号を保持する
 let b:netrw_line = 1
 
+nnoremap > <C-w>>
+nnoremap < <C-w><
 "nnoremap s <Nop>
 "nnoremap sj <C-w>j
 "nnoremap sk <C-w>k
@@ -152,11 +155,11 @@ let b:netrw_line = 1
 "nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 "nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 "
-call submode#enter_with('bufmove', 'n', '', '>', '<C-w>>')
-call submode#enter_with('bufmove', 'n', '', '<', '<C-w><')
-call submode#enter_with('bufmove', 'n', '', '+', '<C-w>+')
-call submode#enter_with('bufmove', 'n', '', '-', '<C-w>-')
-call submode#map('bufmove', 'n', '', '>', '<C-w>>')
-call submode#map('bufmove', 'n', '', '<', '<C-w><')
-call submode#map('bufmove', 'n', '', '+', '<C-w>+')
-call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+" call submode#enter_with('bufmove', 'n', '', '>', '<C-w>>')
+"call submode#enter_with('bufmove', 'n', '', '<', '<C-w><')
+"call submode#enter_with('bufmove', 'n', '', '+', '<C-w>+')
+"call submode#enter_with('bufmove', 'n', '', '-', '<C-w>-')
+"call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+"call submode#map('bufmove', 'n', '', '<', '<C-w><')
+"call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+"call submode#map('bufmove', 'n', '', '-', '<C-w>-')
