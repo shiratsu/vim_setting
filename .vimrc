@@ -72,13 +72,14 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 " NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'b4b4r07/vim-shellutils'
+" NeoBundle 'b4b4r07/vim-shellutils'
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'kana/vim-submode'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
@@ -98,6 +99,7 @@ syntax on
 set splitright
 set splitbelow
 set mouse=a
+set clipboard=unnamed,autoselect
 
 "-----------------------------------------------------------------------------
 "" netrw(ディレクトリ表示)
@@ -122,3 +124,39 @@ let b:netrw_col = 1
 "
 " " 現在の行番号を保持する
 let b:netrw_line = 1
+
+"nnoremap s <Nop>
+"nnoremap sj <C-w>j
+"nnoremap sk <C-w>k
+"nnoremap sl <C-w>l
+"nnoremap sh <C-w>h
+"nnoremap sJ <C-w>J
+"nnoremap sK <C-w>K
+"nnoremap sL <C-w>L
+"nnoremap sH <C-w>H
+"nnoremap sn gt
+"nnoremap sp gT
+"nnoremap sr <C-w>r
+"nnoremap s= <C-w>=
+"nnoremap sw <C-w>w
+"nnoremap so <C-w>_<C-w>|
+"nnoremap sO <C-w>=
+"nnoremap sN :<C-u>bn<CR>
+"nnoremap sP :<C-u>bp<CR>
+"nnoremap st :<C-u>tabnew<CR>
+"nnoremap sT :<C-u>Unite tab<CR>
+"nnoremap ss :<C-u>sp<CR>
+"nnoremap sv :<C-u>vs<CR>
+"nnoremap sq :<C-u>q<CR>
+"nnoremap sQ :<C-u>bd<CR>
+"nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+"nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+"
+call submode#enter_with('bufmove', 'n', '', '>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', '<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', '+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', '-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
