@@ -81,22 +81,22 @@ call neobundle#end()
 " "
 " " Required:
 filetype plugin indent on
-" 
+"
 " " If there are uninstalled bundles found on startup,
 " " this will conveniently prompt you to install them.
 NeoBundleCheck
 colorscheme desert256
 syntax on
-" 
+"
 " set mouse=a
 set clipboard=unnamed,autoselect
-" 
+"
 " "-----------------------------------------------------------------------------
 " "" netrw(ディレクトリ表示)
 " "
 " "" netrwは常にtree view
 let g:netrw_liststyle = 3
-" 
+"
 " " " 'v'でファイルを開くときは右側に開く。(デフォルトが左側なので入れ替え)
 let g:netrw_altv = 1
 " "
@@ -109,9 +109,10 @@ let g:netrw_keepdir = 0
 " " " カーソル位置を保持する
 let b:netrw_col = 1
 " "
-" 
+"
 ab bk Rexplore
-" 
+ab vmsl VimShell
+"
 nnoremap > <C-w>>
 nnoremap < <C-w><
 nnoremap ll <C-w>l
