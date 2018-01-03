@@ -51,40 +51,45 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
+"----------------------------------------------------------------------
+"" Required:
+set runtimepath+=/Users/hiratsukashu/.vim/dein/repos/github.com/Shougo/dein.vim
+
 " Required:
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-" "
-"" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-" "
-"" Let NeoBundle manage NeoBundle
-"" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-" "" NeoBundle 'scrooloose/nerdtree'
-" "" NeoBundle 'b4b4r07/vim-shellutils'
-" "" ファイルオープンを便利に
-" "" NeoBundle 'Shougo/unite.vim'
-" "" Unite.vimで最近使ったファイルを表示できるようにする
-" "" NeoBundle 'Shougo/neomru.vim'
-" "" NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'Shougo/vimproc'
-" "" NeoBundle 'kana/vim-submode'
-" "NeoBundle 'yonchu/accelerated-smooth-scroll'
-" "
-" "" My Bundles here:
-" "" Refer to |:NeoBundle-examples|.
-" "" Note: You don't set neobundle setting in .gvimrc!
-" "
-call neobundle#end()
+call dein#begin('/Users/hiratsukashu/.vim/dein')
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/vimproc')
+call dein#add('flazz/vim-colorschemes')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+call dein#add('Shougo/deoplete.nvim')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+
+
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+"
+"---------------------------------------------------------------------
+
+
 " "
 " " Required:
 filetype plugin indent on
 "
 " " If there are uninstalled bundles found on startup,
 " " this will conveniently prompt you to install them.
-NeoBundleCheck
+" NeoBundleCheck
 colorscheme desert256
 syntax on
 "
@@ -109,6 +114,7 @@ let g:netrw_keepdir = 0
 " " " カーソル位置を保持する
 let b:netrw_col = 1
 " "
+let g:airline#extensions#tabline#enabled = 1
 "
 ab bk Rexplore
 ab vmsl VimShell
