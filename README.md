@@ -21,7 +21,7 @@
 ```
 
 ### 参考
-https://rcmdnk.com/blog/2017/11/16/computer-vim/
-https://qiita.com/ryo2851/items/4e3c287d5a0005780034
+* https://rcmdnk.com/blog/2017/11/16/computer-vim/
+* https://qiita.com/ryo2851/items/4e3c287d5a0005780034
 
 
