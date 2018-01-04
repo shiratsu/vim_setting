@@ -20,6 +20,20 @@
  2936  brew upgrade vim --with-python3
 ```
 
+## やったこと
+
+```
+11452* cd .config
+11453* ls
+11454* mkdir vim
+11455* cd vim
+11456* vim dein_lazy.toml
+11457* /usr/bin/vim dein_lazy.toml
+11458  vim ~/.vimrc
+11459  vim app.py
+11460  vim ~/.config/vim/dein_lazy.toml
+```
+
 ### 参考
 * https://rcmdnk.com/blog/2017/11/16/computer-vim/
 * https://qiita.com/ryo2851/items/4e3c287d5a0005780034
