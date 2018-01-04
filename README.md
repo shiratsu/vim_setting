@@ -17,6 +17,11 @@
  2932  cd cnn_livedoor_news
  2933  vim .
  2934  which vim
- 2935  brew install vim --with-python3
  2936  brew upgrade vim --with-python3
 ```
+
+### 参考
+https://rcmdnk.com/blog/2017/11/16/computer-vim/
+https://qiita.com/ryo2851/items/4e3c287d5a0005780034
+
+
