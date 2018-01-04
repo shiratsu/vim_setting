@@ -72,12 +72,18 @@ call dein#add('Shougo/vimproc')
 call dein#add('flazz/vim-colorschemes')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
-call dein#add('Shougo/deoplete.nvim')
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
 endif
 
+" プラグインリストを収めた TOML ファイル
+  " 予め TOML ファイル（後述）を用意しておく
+let g:rc_dir    = expand('~/.config/vim')
+let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+" TOML を読み込み、キャッシュしておく
+call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
